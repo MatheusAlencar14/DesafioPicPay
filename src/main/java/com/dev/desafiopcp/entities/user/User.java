@@ -3,7 +3,6 @@ package com.dev.desafiopcp.entities.user;
 
 import jakarta.persistence.*;
 import lombok.*;
-import org.hibernate.usertype.UserType;
 
 import java.math.BigDecimal;
 
