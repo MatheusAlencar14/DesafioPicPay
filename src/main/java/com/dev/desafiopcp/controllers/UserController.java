@@ -11,14 +11,15 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Optional;
 
-@RestController("/users")
+@RestController
+@RequestMapping("/api/users")
 public class UserController {
 
     @Autowired
     private UserService service;
 
     @PostMapping
-    public ResponseEntity<User> createUser(@PathVariable UserDTO userDTO) {
+    public ResponseEntity<User> createUser(@RequestBody UserDTO userDTO) {
         User newUser = service.createUser(userDTO);
         return new ResponseEntity<>(newUser, HttpStatus.CREATED);
     }
